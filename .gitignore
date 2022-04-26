@@ -31,4 +31,5 @@ _ReSharper*/
 #Nuget packages folder
 packages/
 /API/reactivities.db
+/client-app/public/assets/categoryImages/
 *.png
