@@ -1,6 +1,4 @@
 import axios, { AxiosResponse } from 'axios';
-import { access } from 'fs';
-import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
 import { Activity } from '../models/activity';
 
 const sleep = (delay: number) => {

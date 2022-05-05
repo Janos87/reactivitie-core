@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import axios from 'axios';
 import { Container } from 'semantic-ui-react';
 import { Activity } from '../models/activity';
 import NavBar from './NavBar';
@@ -7,9 +6,13 @@ import ActivityDashboard from '../../features/activities/dashboard/ActivityDashb
 import {v4 as uuid} from 'uuid';
 import agent from '../api/agent';
 import LoadingComponent from './LoadingComponent.tsx/LoadingComponent';
+import { useStore } from '../stores/store';
+import { observer } from 'mobx-react-lite';
 
 
 function App() {
+  const {activityStore} = useStore();
+
   const [activities, setActivities] = useState<Activity[]>([]);
   const [selectedActivity, setSelectedActivity] = useState<Activity | undefined>(undefined);
   const [editMode, setEditMode] = useState(false);
@@ -96,4 +99,4 @@ if(loading) return <LoadingComponent content='Loading app' />
   );
 }
 
-export default App;
+export default observer(App);
